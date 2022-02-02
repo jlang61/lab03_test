@@ -39,6 +39,7 @@ int IntList::sum() const {
     sum += temp->info;
     temp = temp->next;
   }
+  cout << "sum = " << sum << std::endl;
   return sum; // REPLACE THIS NON-SOLUTION
 }
 
@@ -81,7 +82,7 @@ double IntList::average() const {
     return 0.0;
   }
   Node* temp = this->first;
-  double sum = temp->info;
+  double sum = 0;
   double count = 0.0;
   while(temp){
     sum += temp->info;
@@ -116,10 +117,12 @@ IntList& IntList::operator=(const IntList& source){
     }
   }
   temp = source.first;
+  this->first = nullptr;
   while(temp){
     this->append(temp->info);
     temp = temp->next;
   }
+  temp = this->first;
   return *this;
 }
 
