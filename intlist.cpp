@@ -39,7 +39,6 @@ int IntList::sum() const {
     sum += temp->info;
     temp = temp->next;
   }
-  cout << "sum = " << sum << std::endl;
   return sum; // REPLACE THIS NON-SOLUTION
 }
 
